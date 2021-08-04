@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Container } from "@material-ui/core";
 import "./App.css";
-import Header from "./Components/Header";
+import Header from "./Components/Header/Header";
+import Definition from "./Components/Definitions/Definition";
 
 const App = () => {
   const [meaning, setMeaning] = useState([]);
@@ -12,7 +13,7 @@ const App = () => {
   const dict_api = async () => {
     try {
       const data = await axios.get(
-        "https://api.dictionaryapi.dev/api/v2/entries/en/plane"
+        `https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`
       );
 
       setMeaning(data.data);
@@ -27,7 +28,7 @@ const App = () => {
 
   useEffect(() => {
     dict_api();
-  }, []);
+  }, [word, category]);
 
   return (
     <div className="app">
@@ -38,6 +39,9 @@ const App = () => {
           category={category}
           setCategory={setCategory}
         />
+        {meaning && (
+          <Definition word={word} meaning={meaning} category={category} />
+        )}
       </Container>
     </div>
   );

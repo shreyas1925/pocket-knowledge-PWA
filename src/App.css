@@ -15,5 +15,6 @@ body {
 }
 
 .contain {
+  padding-top: 30px;
   display: flex;
 }

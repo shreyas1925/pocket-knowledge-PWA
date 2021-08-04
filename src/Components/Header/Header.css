@@ -19,12 +19,9 @@
   justify-content: space-around;
 }
 
-.search,
-select {
-}
-
 @media (max-width: 900px) {
   .heading {
+    margin-top: 50px;
     font-size: 9vw;
     text-transform: uppercase;
   }
@@ -33,7 +30,7 @@ select {
     height: 30vh;
   }
   .inputs {
-    width: 100%;
+    width: 75%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;

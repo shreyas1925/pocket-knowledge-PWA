@@ -6,7 +6,7 @@ import {
 } from "@material-ui/core";
 import React from "react";
 import "./Header.css";
-import categories from "../data/category";
+import categories from "../../data/category";
 const Header = ({ word, setWord, category, setCategory }) => {
   const darkTheme = createTheme({
     palette: {
@@ -16,6 +16,11 @@ const Header = ({ word, setWord, category, setCategory }) => {
       type: "dark",
     },
   });
+
+  const onHandleChange = (language) => {
+    setCategory(language);
+    setWord("");
+  };
 
   return (
     <div className="header">
@@ -30,12 +35,13 @@ const Header = ({ word, setWord, category, setCategory }) => {
             value={word}
             onChange={(e) => setWord(e.target.value)}
           />
+          <br />
           <TextField
             select
             label="Languages"
             className="select"
             value={category}
-            onChange={(e) => setCategory(e.target.value)}
+            onChange={(e) => onHandleChange(e.target.value)}
             helperText="Please Select your language"
             variant="outlined"
           >
