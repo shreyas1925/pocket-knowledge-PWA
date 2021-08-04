@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Container } from "@material-ui/core";
+import "./App.css";
+import Header from "./Components/Header";
 
-function App() {
+const App = () => {
+  const [meaning, setMeaning] = useState([]);
+  const [word, setWord] = useState("");
+  const [category, setCategory] = useState("en");
+
+  const dict_api = async () => {
+    try {
+      const data = await axios.get(
+        "https://api.dictionaryapi.dev/api/v2/entries/en/plane"
+      );
+
+      setMeaning(data.data);
+    } catch (err) {
+      {
+        console.log(err);
+      }
+    }
+  };
+
+  console.log(meaning);
+
+  useEffect(() => {
+    dict_api();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Container maxWidth="md" className="contain">
+        <Header
+          word={word}
+          setWord={setWord}
+          category={category}
+          setCategory={setCategory}
+        />
+      </Container>
     </div>
   );
-}
+};
 
 export default App;
