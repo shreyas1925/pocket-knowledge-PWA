@@ -3,18 +3,21 @@
   flex-direction: column;
   overflow-x: hidden;
   padding: 2px;
-  /* overflow-y: scroll; */
   scrollbar-width: thin;
   margin-top: 20px;
   height: 55vh;
-  /* border: 10px solid black; */
   border-radius: 10px;
   background-color: #2d3543;
 }
 
 .subtitle {
-  font-size: 3vw;
+  margin-top: 40px;
+  font-size: 2vw;
   text-align: center;
+  font-family: "Courier New", Courier, monospace;
+}
+.subtitle .MuiSvgIcon-root {
+  margin-top: 16px;
 }
 
 .singleMean {
@@ -25,7 +28,7 @@
   flex-direction: column;
   border-radius: 8px;
   padding: 10px 20px;
-  margin: 5px 0;
+  margin: 1px 0;
 }
 
 .hrtag {
@@ -33,18 +36,21 @@
   width: 100%;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 900px) {
   .subtitle {
-    font-size: 5vw;
-    margin-top: 40px;
+    font-size: 6vw;
+    margin-top: 50px;
     text-align: center;
   }
 
   .meanings__main {
-    margin-top: 50px;
+    margin-top: 80px;
   }
   .audio {
     width: 200px;
     height: 200px;
+  }
+  .MuiSvgIcon-root {
+    margin-top: 22px;
   }
 }

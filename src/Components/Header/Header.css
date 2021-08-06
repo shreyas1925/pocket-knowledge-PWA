@@ -35,6 +35,12 @@
     width: 75%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+  }
+
+  .song {
+    height: 39px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
   }
 }

@@ -7,13 +7,20 @@ import {
 import React from "react";
 import "./Header.css";
 import categories from "../../data/category";
-const Header = ({ word, setWord, category, setCategory }) => {
+const Header = ({
+  word,
+  setWord,
+  category,
+  setCategory,
+  LightTheme,
+  meaning,
+}) => {
   const darkTheme = createTheme({
     palette: {
       primary: {
-        main: "#fff",
+        main: LightTheme ? "#000" : "#fff",
       },
-      type: "dark",
+      type: LightTheme ? "light" : "dark",
     },
   });
 
@@ -24,7 +31,10 @@ const Header = ({ word, setWord, category, setCategory }) => {
 
   return (
     <div className="header">
-      <span className="heading" style={{ color: "#1B966A" }}>
+      <span
+        className="heading"
+        style={{ color: LightTheme ? "#bdb2ff" : "#1B966A" }}
+      >
         <b>{word ? word : "Pocket knowledge"}</b>
       </span>
       <div className="inputs">
@@ -34,6 +44,7 @@ const Header = ({ word, setWord, category, setCategory }) => {
             label="Search your word"
             variant="outlined"
             className="search"
+            autocomplete="off"
             value={word}
             onChange={(e) => setWord(e.target.value)}
           />
@@ -53,6 +64,19 @@ const Header = ({ word, setWord, category, setCategory }) => {
               </MenuItem>
             ))}
           </TextField>
+
+          {meaning[0] && word && category === "en" && (
+            <div className="song">
+              <audio
+                className="song"
+                style={{ borderRadius: 10 }}
+                src={meaning[0].phonetics[0] && meaning[0].phonetics[0].audio}
+                controls
+              >
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          )}
         </ThemeProvider>
       </div>
     </div>

@@ -18,3 +18,9 @@ body {
   padding-top: 30px;
   display: flex;
 }
+
+@media (max-width: 900px) {
+  .menu {
+    margin-top: -15px;
+  }
+}
