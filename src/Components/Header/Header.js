@@ -24,7 +24,9 @@ const Header = ({ word, setWord, category, setCategory }) => {
 
   return (
     <div className="header">
-      <span className="heading">{word ? word : "Pocket knowledge"}</span>
+      <span className="heading" style={{ color: "#1B966A" }}>
+        <b>{word ? word : "Pocket knowledge"}</b>
+      </span>
       <div className="inputs">
         <ThemeProvider theme={darkTheme}>
           <TextField

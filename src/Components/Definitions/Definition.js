@@ -11,20 +11,24 @@ const Definition = ({ word, meaning, category }) => {
           mean.meanings.map((item) =>
             item.definitions.map((defi) => (
               <div className="singleMean">
-                <b> &#x2192; {defi.definition}</b>
-                <hr className="hrtag" />
+                <span>
+                  <b style={{ color: "#1B966A" }}>Meaning : </b>
+                  <b style={{ color: "#fff" }}> &#x2192; {defi.definition}</b>
+                </span>
+
+                {/* <hr className="hrtag" /> */}
                 {defi.example && (
                   <span>
-                    <b>Example : </b>
-                    {defi.example}
+                    <b style={{ color: "#1B966A" }}>Example : </b>
+                    <b style={{ color: "#A4A6A8" }}>{defi.example} </b>
                   </span>
                 )}
-                <br />
+
                 {defi.synonyms && (
                   <span>
-                    <b>Synonyms : </b>
+                    <b style={{ color: "#1B966A" }}>Synonyms : </b>
                     {defi.synonyms.map((synonym) => (
-                      <b>{synonym}, </b>
+                      <b style={{ color: "#A4A6A8" }}>{synonym}, </b>
                     ))}
                   </span>
                 )}

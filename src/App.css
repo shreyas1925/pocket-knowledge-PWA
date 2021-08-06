@@ -4,13 +4,13 @@
 }
 
 body {
-  height: 100vh;
+  height: 100%;
   width: 100%;
 }
 
 .app {
   height: 100vh;
-  background-color: black;
+  background-color: #080a0f;
   color: white;
 }
 

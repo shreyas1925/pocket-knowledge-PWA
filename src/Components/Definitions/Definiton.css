@@ -4,11 +4,12 @@
   overflow-x: hidden;
   padding: 2px;
   /* overflow-y: scroll; */
-  margin-top: 20px;
   scrollbar-width: thin;
+  margin-top: 20px;
   height: 55vh;
-  border: 10px solid black;
+  /* border: 10px solid black; */
   border-radius: 10px;
+  background-color: #2d3543;
 }
 
 .subtitle {
@@ -17,7 +18,7 @@
 }
 
 .singleMean {
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   color: black;
   padding: 5px;
   display: flex;
@@ -40,6 +41,10 @@
   }
 
   .meanings__main {
-    margin-top: 40px;
+    margin-top: 50px;
+  }
+  .audio {
+    width: 200px;
+    height: 200px;
   }
 }

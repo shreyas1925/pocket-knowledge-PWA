@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Georama:wght@200&display=swap");
+
 .heading {
-  font-size: 5vw;
+  font-size: 4vw;
   text-transform: uppercase;
   margin-bottom: 20px;
 }
@@ -22,7 +24,7 @@
 @media (max-width: 900px) {
   .heading {
     margin-top: 50px;
-    font-size: 9vw;
+    font-size: 8vw;
     text-transform: uppercase;
   }
 
