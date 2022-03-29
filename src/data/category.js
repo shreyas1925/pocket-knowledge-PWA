@@ -12,5 +12,4 @@ const categories = [
   { value: "Arabic", label: "ar" },
   { value: "Turkish", label: "tr" },
 ];
-
 export default categories;
